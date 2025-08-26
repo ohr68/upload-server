@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/infra/http/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch --env-file .env src/infra/http/server.ts",
+    "test": "dotenv -e .env.test -- vitest run",
+    "test:watch": "dotenv -e .env.test -- vitest"
   },
   "keywords": [],
   "author": "",
@@ -14,15 +15,21 @@
   "devDependencies": {
     "@biomejs/biome": "^2.2.2",
     "@types/node": "^24.3.0",
+    "dotenv-cli": "^10.0.0",
     "eslint": "^9.34.0",
     "eslint-plugin-n": "^17.21.3",
     "eslint-plugin-vitest": "^0.5.4",
     "neostandard": "^0.12.2",
     "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "@fastify/cors": "^11.1.0",
+    "@fastify/multipart": "^9.0.3",
+    "@fastify/swagger": "^9.5.1",
+    "@fastify/swagger-ui": "^5.2.3",
     "fastify": "^5.5.0",
     "fastify-type-provider-zod": "^5.0.3",
     "zod": "^4.1.1"
