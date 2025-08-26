@@ -8,4 +8,4 @@ services:
       - POSTGRES_PASSWORD=Senha@123
       - POSTGRES_DB=upload
     volumes:
-      - ./docker/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - './docker:/docker-entrypoint-initdb.d'
