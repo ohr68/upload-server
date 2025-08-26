@@ -12,7 +12,8 @@
     "db:migrate:test": "dotenv -e .env.test -- drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "pretest": "pnpm run db:migrate:test",
-    "pretest:watch": "pnpm run db:migrate:test"
+    "pretest:watch": "pnpm run db:migrate:test",
+    "build": "tsup-node"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "@types/node": "^24.3.0",
     "dotenv-cli": "^10.0.0",
     "drizzle-kit": "^0.31.4",
+    "tsup": "^8.5.0",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "vite-tsconfig-paths": "^5.1.4",
